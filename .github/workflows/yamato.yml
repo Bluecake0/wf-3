@@ -29,13 +29,13 @@ jobs:
        - name: cloning repo
          continue-on-error: true
          run: |
-           git clone -b main https://${{ secrets.GH_TOKEN }}@github.com/Bluecake0/BC
+           git clone -b main https://${{ secrets.GH_TOKEN }}@github.com/Bluecake0/beech
 
        - name: Running SPP Bot
          timeout-minutes: 240
          continue-on-error: true
          run: |
-           cd BC
+           cd beech
 
            docker build -t compressor . && docker run compressor
 
